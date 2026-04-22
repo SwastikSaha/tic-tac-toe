@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dxltppaeqac3f"]
+
+[ext_resource type="Texture2D" uid="uid://dq2vmcawam8a" path="res://Assets/options_button.png" id="1_663nc"]
+[ext_resource type="Script" uid="uid://bkuqwa0g4s3x0" path="res://Scripts/options.gd" id="1_hvj8k"]
+[ext_resource type="Texture2D" uid="uid://ckjs2313hw8ef" path="res://Assets/bottom_pic.png" id="2_hvj8k"]
+[ext_resource type="Texture2D" uid="uid://oe7jigxd4etw" path="res://Assets/back_button.png" id="3_38txh"]
+[ext_resource type="Texture2D" uid="uid://bjygw2cm4mr6d" path="res://Assets/credits_buttons.png" id="4_5a0sy"]
+[ext_resource type="Texture2D" uid="uid://csvuk5b6jte85" path="res://Assets/how_to_button.png" id="5_g5vgl"]
+[ext_resource type="Texture2D" uid="uid://bsvn5mdv6l58h" path="res://Assets/sound_button.png" id="6_srb65"]
+[ext_resource type="AudioStream" uid="uid://dbytg8hdu5t8i" path="res://Assets/default_sound_main_menu.mp3" id="8_38txh"]
+
+[node name="Options" type="Node2D" unique_id=586674538]
+script = ExtResource("1_hvj8k")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=845056240]
+layer = -15
+
+[node name="BackGround" type="ColorRect" parent="UILayer" unique_id=140861170]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.35686275, 0.28235295, 0.6431373, 1)
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Sprite2D" parent="." unique_id=1254253716]
+position = Vector2(213, 70)
+scale = Vector2(0.51666665, 0.51428574)
+texture = ExtResource("1_663nc")
+metadata/_edit_lock_ = true
+
+[node name="Decoration 1" type="Sprite2D" parent="." unique_id=1443361323]
+position = Vector2(225, 509)
+scale = Vector2(0.8960001, 0.6)
+texture = ExtResource("2_hvj8k")
+metadata/_edit_lock_ = true
+
+[node name="Back_Button" type="Button" parent="." unique_id=1929376125]
+offset_left = 80.0
+offset_top = 156.0
+offset_right = 237.0
+offset_bottom = 303.0
+scale = Vector2(0.6363636, 0.62184036)
+icon = ExtResource("3_38txh")
+
+[node name="Credits_andAIUsageButton" type="Button" parent="." unique_id=332189938]
+offset_left = 242.00002
+offset_top = 158.00002
+offset_right = 399.0
+offset_bottom = 305.0
+scale = Vector2(0.6363636, 0.62184036)
+icon = ExtResource("4_5a0sy")
+
+[node name="How_ToButton" type="Button" parent="." unique_id=919166867]
+offset_left = 81.0
+offset_top = 291.0
+offset_right = 238.0
+offset_bottom = 438.0
+scale = Vector2(0.6363636, 0.62184036)
+icon = ExtResource("5_g5vgl")
+
+[node name="Mute_Button" type="Button" parent="." unique_id=1389669759]
+offset_left = 239.0
+offset_top = 292.0
+offset_right = 396.0
+offset_bottom = 439.0
+scale = Vector2(0.6363636, 0.62184036)
+icon = ExtResource("6_srb65")
+
+[node name="OptionsMusic" type="AudioStreamPlayer" parent="." unique_id=411492513]
+unique_name_in_owner = true
+stream = ExtResource("8_38txh")
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits_andAIUsageButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="How_ToButton" to="." method="_on_how_to_button_pressed"]
+[connection signal="pressed" from="Mute_Button" to="." method="_on_mute_button_pressed"]

@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://busy4vtmwtk02"]
+
+[ext_resource type="Script" uid="uid://cu53fheqw4r5k" path="res://Scripts/loading_screen.gd" id="1_nfm0g"]
+[ext_resource type="AudioStream" uid="uid://bs0vmdnpahnig" path="res://Assets/loading_sound.mp3" id="2_fayou"]
+[ext_resource type="Texture2D" uid="uid://dyl2jsi301x22" path="res://Assets/loading_bar_frames.png" id="3_1godw"]
+[ext_resource type="Texture2D" uid="uid://cgjcc66a0ekkv" path="res://Assets/Loading.png" id="4_fayou"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yisgd"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 30, 486, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gegoj"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 150, 486, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2hk5"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 270, 486, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1opfs"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 390, 486, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbrhi"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 510, 486, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iom8t"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 630, 486, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw6gx"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 750, 486, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8yqx"]
+atlas = ExtResource("3_1godw")
+region = Rect2(0, 870, 486, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbyj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yisgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gegoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2hk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1opfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbrhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iom8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw6gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8yqx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LoadingScreen" type="Control" unique_id=137336414]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_nfm0g")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1781083879]
+unique_name_in_owner = true
+stream = ExtResource("2_fayou")
+bus = &"Music"
+parameters/looping = true
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=432627872]
+layer = -15
+
+[node name="BackGround" type="ColorRect" parent="UILayer" unique_id=2034681790]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.96114224, 0.5544846, 0.6044393, 1)
+metadata/_edit_lock_ = true
+
+[node name="Animation_Bar" type="AnimatedSprite2D" parent="." unique_id=757133323]
+unique_name_in_owner = true
+position = Vector2(227, 273.00003)
+scale = Vector2(0.74451816, 1.4317343)
+sprite_frames = SubResource("SpriteFrames_qbyj8")
+frame_progress = 0.6070805
+speed_scale = 0.5
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1790849838]
+position = Vector2(228, 198)
+scale = Vector2(0.7184533, 0.7659662)
+texture = ExtResource("4_fayou")
+metadata/_edit_lock_ = true

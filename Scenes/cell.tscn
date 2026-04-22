@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://deseq8gafvth4"]
+
+[ext_resource type="Texture2D" uid="uid://db8kslmn6y1sh" path="res://Assets/LUIGI_HAT.png" id="1_da881"]
+[ext_resource type="Script" uid="uid://dkns3hc1gwdjb" path="res://Scripts/cell.gd" id="1_gilj4"]
+[ext_resource type="Texture2D" uid="uid://b0fwda4sajspo" path="res://Assets/MARIO_HAT.png" id="2_gilj4"]
+[ext_resource type="Texture2D" uid="uid://bk8oj4t4p5lfs" path="res://Assets/trophy.png" id="4_imdwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da881"]
+size = Vector2(68.04929, 56.25)
+
+[node name="Cell" type="Area2D" unique_id=175180456]
+script = ExtResource("1_gilj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=317355687]
+position = Vector2(42.778183, 27.875)
+scale = Vector2(1.2409186, 1)
+shape = SubResource("RectangleShape2D_da881")
+
+[node name="X" type="Sprite2D" parent="." unique_id=664775874]
+unique_name_in_owner = true
+position = Vector2(43, 26.000004)
+scale = Vector2(0.1941617, 0.20206867)
+texture = ExtResource("2_gilj4")
+
+[node name="O" type="Sprite2D" parent="." unique_id=494989378]
+unique_name_in_owner = true
+position = Vector2(42.000004, 27)
+scale = Vector2(0.15620075, 0.16697699)
+texture = ExtResource("1_da881")
+
+[node name="Trophy" type="Sprite2D" parent="." unique_id=614574993]
+unique_name_in_owner = true
+position = Vector2(39.999992, 22.999992)
+scale = Vector2(0.23260109, 0.25413823)
+texture = ExtResource("4_imdwo")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

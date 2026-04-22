@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dx3cjqbnibep8"]
+
+[ext_resource type="Texture2D" uid="uid://ckjs2313hw8ef" path="res://Assets/bottom_pic.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://1r24dp7q0ewb" path="res://Scripts/main_menu.gd" id="1_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://c5e3p3fcfkc0v" path="res://Assets/logo.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://dvwyp3hrrl4t" path="res://Assets/Luigi_logo.png" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://dk2j28ukg5sos" path="res://Assets/Mario_logo.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://dq2vmcawam8a" path="res://Assets/options_button.png" id="6_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://5x60ipmt2jng" path="res://Assets/play_button.png" id="7_trj04"]
+[ext_resource type="AudioStream" uid="uid://dbytg8hdu5t8i" path="res://Assets/default_sound_main_menu.mp3" id="8_yhxw7"]
+
+[node name="MainMenu" type="Node2D" unique_id=1052066408]
+script = ExtResource("1_cp0ys")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=176102470]
+layer = -15
+
+[node name="BackGround" type="ColorRect" parent="UILayer" unique_id=1544159140]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.35686275, 0.28235295, 0.6431373, 1)
+metadata/_edit_lock_ = true
+
+[node name="Decoration 1" type="Sprite2D" parent="." unique_id=381638212]
+position = Vector2(225, 509)
+scale = Vector2(0.8960001, 0.6)
+texture = ExtResource("1_28flt")
+metadata/_edit_lock_ = true
+
+[node name="Decoration 2" type="Sprite2D" parent="." unique_id=1550997835]
+position = Vector2(224.00002, 94)
+rotation = 3.1387289
+scale = Vector2(0.8960001, 0.6)
+texture = ExtResource("1_28flt")
+metadata/_edit_lock_ = true
+
+[node name="Decoration 3" type="Sprite2D" parent="." unique_id=912481281]
+position = Vector2(213.00002, 298)
+scale = Vector2(0.386, 0.4)
+texture = ExtResource("2_ce3w2")
+metadata/_edit_lock_ = true
+
+[node name="Decoration 4" type="Sprite2D" parent="." unique_id=2004621864]
+position = Vector2(369, 275)
+scale = Vector2(0.35067555, 0.3932366)
+texture = ExtResource("3_n45e2")
+
+[node name="Decoration 5" type="Sprite2D" parent="." unique_id=1257279909]
+position = Vector2(74, 291)
+scale = Vector2(0.31101912, 0.31288216)
+texture = ExtResource("4_opfnp")
+
+[node name="Options_button" type="Button" parent="." unique_id=1158565356]
+unique_name_in_owner = true
+offset_left = 228.0
+offset_top = 392.00003
+offset_right = 726.0
+offset_bottom = 563.00006
+scale = Vector2(0.4078528, 0.4649753)
+icon = ExtResource("6_yhxw7")
+
+[node name="Play_Button" type="Button" parent="." unique_id=222736409]
+unique_name_in_owner = true
+offset_left = 6.9999995
+offset_top = 119.0
+offset_right = 505.0
+offset_bottom = 290.0
+scale = Vector2(0.37357593, 0.4331283)
+icon = ExtResource("7_trj04")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1446038936]
+unique_name_in_owner = true
+stream = ExtResource("8_yhxw7")
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="pressed" from="Options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]
