@@ -3,7 +3,7 @@
 A 2-player Tic-Tac-Toe game built using Godot.
 
 ## 🚀 Live Demo
-[Play Here](PASTE_ITCH_LINK)
+[Play Here](https://swastik-saha.itch.io/tic-tac-toe)
 
 ---
 
