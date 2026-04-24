@@ -25,6 +25,10 @@ window/size/viewport_width=450
 window/size/viewport_height=600
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [input]
 
 reset_game={
@@ -50,3 +54,4 @@ click={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
